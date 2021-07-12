@@ -80,7 +80,7 @@ def run(local_rank: int, config: Any):
     elif isinstance(lr_scheduler, LRScheduler):
         trainer.add_event_handler(Events.ITERATION_COMPLETED, lr_scheduler)
     else:
-        trainer.add_event_handler(Events.ITERATION_STARTED, lr_scheduler)
+        trainer.add_event_handler(Events.ITERATOIN_COMPLETED, lr_scheduler)
 
     # setup ignite handlers
     #::: if (it.save_training || it.save_evaluation) { :::#
